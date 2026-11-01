@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Miguel Ángel García Durán | Ventas y desarrollo de negocio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1B2550">
+  <title>Miguel Ángel García Durán · Ventas · Desarrollo de negocio · Gestión de cuentas</title>
   <meta name="description" content="Miguel Ángel García Durán, ventas B2B, desarrollo de negocio y gestión de cuentas en Madrid. International Sales Consultant en Grupo Planeta y cofundador de Novofabric.">
   <link rel="canonical" href="https://miguelangelgarciaduran.com/">
   <link rel="alternate" hreflang="es" href="https://miguelangelgarciaduran.com/">
@@ -15,10 +16,6 @@
   <meta property="og:url" content="https://miguelangelgarciaduran.com/">
   <meta property="og:locale" content="es_ES">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,700;12..96,800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,165 +34,459 @@
     "sameAs": ["https://www.linkedin.com/in/miguelangel199"]
   }
   </script>
+<style>
+:root{
+  --sys:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,Roboto,sans-serif;
+  --ink:#1D1D1F; --muted:#6E6E73; --line:rgba(0,0,0,.09);
+  --win:rgba(250,250,250,.86); --glass:rgba(255,255,255,.22); --glass-line:rgba(255,255,255,.35);
+  --accent:#2F55E4;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:var(--sys);color:#fff;overflow:hidden;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;background:#1B2550}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid #8FB0FF;outline-offset:3px;border-radius:8px}
+
+.wall{position:fixed;inset:-40px;z-index:0;background:
+  radial-gradient(900px 600px at 70% 30%,rgba(143,168,255,.45),transparent 60%),
+  radial-gradient(700px 500px at 15% 85%,rgba(255,170,120,.35),transparent 60%),
+  linear-gradient(160deg,#3550C8,#1B2550 55%,#0E1430)}
+.wall img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(22px) saturate(1.1);transform:scale(1.08);opacity:0;transition:opacity 1s}
+.wall img.ok{opacity:1}
+.wall::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,0) 30%,rgba(0,0,0,.25))}
+
+.menubar{position:fixed;top:0;left:0;right:0;height:30px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:13.5px;background:rgba(255,255,255,.18);backdrop-filter:blur(30px) saturate(1.6);-webkit-backdrop-filter:blur(30px) saturate(1.6);color:#fff}
+.menubar .left,.menubar .right{display:flex;align-items:center;gap:18px}
+.menubar .dot{width:12px;height:12px;border-radius:50%;background:#fff}
+.menubar b{font-weight:700}
+.menubar .right{gap:14px;font-variant-numeric:tabular-nums}
+.lang{display:flex;background:rgba(255,255,255,.18);border-radius:6px;padding:2px;font-size:11px;font-weight:600}
+.lang a,.lang span{padding:1px 7px;border-radius:4px}
+.lang span{background:#fff;color:#1D1D1F}
+.lang a{opacity:.75}
+
+.desk{position:fixed;inset:30px 0 0;z-index:5}
+.group-title{position:absolute;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.4);display:flex;justify-content:space-between;text-shadow:0 1px 3px rgba(0,0,0,.35)}
+.item{position:absolute;width:104px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;touch-action:none;user-select:none;-webkit-user-select:none}
+.item .lbl{font-size:11.5px;font-weight:700;line-height:1.2;text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,.55);padding:2px 5px;border-radius:4px}
+.item.sel .lbl{background:var(--accent)}
+.item.dragging{z-index:40;opacity:.9}
+.tile{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;box-shadow:0 8px 18px -8px rgba(0,0,0,.6);font-weight:800;font-size:20px;letter-spacing:-.03em;overflow:hidden;position:relative}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t-white{background:#fff;color:var(--ink)}
+.t-blue{background:linear-gradient(160deg,#4C6EF5,#2443C9)}
+.t-ink{background:linear-gradient(160deg,#3B4256,#14171F)}
+.t-green{background:linear-gradient(160deg,#3CC47C,#1F8F5A)}
+.t-amber{background:linear-gradient(160deg,#FFC24D,#E08A00)}
+.t-coral{background:linear-gradient(160deg,#FF8A73,#E2523A)}
+.folder-wrap,.doc-wrap{display:grid;place-items:center;width:68px;height:62px}
+.folder{width:68px;height:56px;position:relative;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.folder::before{content:"";position:absolute;left:0;top:0;width:28px;height:12px;border-radius:5px 5px 0 0;background:#9CC9F5}
+.folder::after{content:"";position:absolute;left:0;right:0;top:6px;bottom:0;border-radius:6px;background:linear-gradient(180deg,#C8E2FA,#A9D0F5)}
+.doc{width:46px;height:58px;background:#fff;border-radius:3px;position:relative;box-shadow:0 6px 12px -4px rgba(0,0,0,.4);color:var(--ink);font-size:11px;font-weight:700;padding:8px 7px;text-align:left}
+.doc::before{content:"";position:absolute;top:0;right:0;border-width:0 10px 10px 0;border-style:solid;border-color:transparent #E3E5EA transparent transparent}
+.doc i{display:block;height:2px;background:#D9DCE2;margin-top:5px;border-radius:1px}
+.doc i:first-of-type{margin-top:8px}
+
+.signature{position:fixed;left:20px;bottom:18px;z-index:6;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.signature h1{font-size:16px;font-weight:700}
+.signature p{font-size:13px;opacity:.95;margin-top:2px}
+.signature small{display:block;font-size:11px;opacity:.75;margin-top:6px}
+
+.dock{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:45;display:flex;align-items:flex-end;gap:8px;padding:7px 9px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(30px) saturate(1.5);-webkit-backdrop-filter:blur(30px) saturate(1.5)}
+.dock .sep{width:1px;align-self:stretch;margin:4px 3px;background:rgba(255,255,255,.4)}
+.dk{position:relative;display:block}
+.dk .ico{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;transition:transform .18s cubic-bezier(.2,.8,.2,1),margin .18s;box-shadow:0 4px 10px -4px rgba(0,0,0,.45)}
+.dk .ico svg{width:26px;height:26px}
+.dk:hover .ico,.dk:focus-visible .ico{transform:translateY(-10px) scale(1.25);margin:0 8px}
+.dk .tip{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);background:rgba(30,30,32,.85);color:#fff;font-size:12px;padding:4px 9px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
+.dk:hover .tip,.dk:focus-visible .tip{opacity:1}
+
+.win{position:fixed;z-index:30;width:min(520px,calc(100vw - 32px));max-height:calc(100vh - 140px);display:none;flex-direction:column;color:var(--ink);background:var(--win);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);border-radius:12px;box-shadow:0 0 0 .5px rgba(0,0,0,.25),0 30px 70px -10px rgba(0,0,0,.55);overflow:hidden}
+.win.open{display:flex;animation:pop .22s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+.titlebar{height:40px;flex:none;display:grid;grid-template-columns:70px 1fr 70px;align-items:center;padding:0 12px;cursor:grab;border-bottom:1px solid var(--line);touch-action:none;user-select:none;-webkit-user-select:none}
+.titlebar:active{cursor:grabbing}
+.lights{display:flex;gap:8px}
+.lights button,.lights span{width:12px;height:12px;border-radius:50%;display:block}
+.lights .x{background:#FF5F57}.lights .m{background:#FEBC2E}.lights .z{background:#28C840}
+.titlebar .tt{text-align:center;font-size:13px;font-weight:600;color:#4A4A4F}
+.titlebar .back{display:none}
+.wbody{overflow:auto;padding:22px 24px 26px;-webkit-overflow-scrolling:touch}
+.wbody p{line-height:1.55;font-size:15px}
+.wbody p+p{margin-top:10px}
+.who{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.avatar{width:58px;height:58px;border-radius:50%;flex:none;background:linear-gradient(160deg,#4C6EF5,#2443C9);color:#fff;display:grid;place-items:center;font-weight:700;font-size:20px;overflow:hidden;position:relative}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.who h2{font-size:19px;font-weight:700}
+.who small{color:var(--muted);font-size:13px}
+.rows{margin-top:16px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;width:100%;text-align:left}
+.row .y{color:var(--muted);font-variant-numeric:tabular-nums}
+.row b{display:block;font-weight:600}
+.row span{color:var(--muted);font-size:13px}
+button.row:hover b{color:var(--accent)}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
+.kpi div{flex:1 1 120px;background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 0 0 1px var(--line)}
+.kpi strong{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.kpi span{font-size:12px;color:var(--muted)}
+.btns{display:grid;gap:8px;margin-top:16px}
+.btn{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:14.5px;font-weight:600;width:100%}
+.btn small{font-weight:400;color:var(--muted)}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:none}
+.btn.primary small{color:rgba(255,255,255,.8)}
+.wins-list .y{font-weight:800;color:var(--accent);font-size:16px;letter-spacing:-.02em}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.photos h3{grid-column:1/-1;font-size:12px;color:var(--muted);font-weight:600;margin-top:6px}
+.ph{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#E6E8EC;display:flex;align-items:flex-end;text-align:left}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph span{position:relative;font-size:11px;line-height:1.25;padding:6px;color:var(--muted)}
+.ph.has span{color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));width:100%}
+.ph em{position:absolute;top:6px;left:6px;font-style:normal;font-size:10px;background:#FFE89A;color:#3d3200;padding:0 5px;border-radius:3px}
+.ph.has em{display:none}
+.viewer{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.88);display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.viewer.open{display:flex}
+.viewer img{max-width:100%;max-height:80vh;border-radius:8px}
+.viewer p{margin-top:12px;font-size:14px}
+.viewer button{position:absolute;top:20px;right:22px;font-size:28px;line-height:1}
+
+.istatus{display:none}
+@media (max-width:760px){
+  body{overflow:auto}
+  .menubar,.group-title,.signature small{display:none}
+  .istatus{display:flex;position:fixed;top:0;left:0;right:0;z-index:50;height:calc(44px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 26px 0 30px;justify-content:space-between;align-items:center;font-weight:600;font-size:15px}
+  .istatus .ic{display:flex;gap:6px;align-items:center}
+  .desk{position:relative;inset:auto;padding:calc(56px + env(safe-area-inset-top)) 16px 130px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px 4px;align-content:start;min-height:100%}
+  .signature{position:relative;left:auto;bottom:auto;grid-column:1/-1;order:-1;margin:0 4px 6px;padding:16px 18px;border-radius:22px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+  .signature h1{font-size:20px}
+  .item{position:static!important;width:auto}
+  .item .lbl{text-transform:none;font-weight:500;font-size:11.5px;text-shadow:0 1px 3px rgba(0,0,0,.4);padding:0}
+  .item.sel .lbl{background:none}
+  .tile,.folder-wrap,.doc-wrap{width:60px;height:60px;border-radius:14px}
+  .folder-wrap,.doc-wrap{background:rgba(255,255,255,.9);box-shadow:0 8px 18px -8px rgba(0,0,0,.6);overflow:hidden}
+  .folder{transform:scale(.62);filter:none}
+  .doc{transform:scale(.72);box-shadow:0 0 0 1px #E3E5EA}
+  .dock{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));transform:none;justify-content:space-around;border-radius:30px;padding:12px 10px}
+  .dock .sep,.dock .opt{display:none}
+  .dk .ico{width:60px;height:60px;border-radius:14px}
+  .dk:hover .ico,.dk:focus-visible .ico{transform:none;margin:0}
+  .dk .tip{display:none}
+  .win{left:0!important;top:0!important;right:0;bottom:0;width:100%!important;max-height:none;height:100%;border-radius:0;background:#F2F2F7;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .win{z-index:80!important}
+  body.has-win .dock,body.has-win .istatus{display:none}
+  .win.open{animation:sheet .32s cubic-bezier(.2,.8,.2,1)}
+  @keyframes sheet{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+  .titlebar{height:auto;padding:calc(12px + env(safe-area-inset-top)) 16px 12px;grid-template-columns:90px 1fr 90px;background:rgba(242,242,247,.95);cursor:default}
+  .lights{display:none}
+  .titlebar .back{display:block;color:var(--accent);font-size:16px;text-align:left;grid-column:1;grid-row:1}
+  .titlebar .tt{font-size:16px;color:var(--ink);grid-column:2;grid-row:1}
+  .photos{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
 
-<div class="wrap">
-  <header class="top">
-    <a class="brand" href="/">MÁ García Durán</a>
-    <nav aria-label="Principal">
-      <a class="hide-sm" href="#trayectoria">Trayectoria</a>
-      <a class="hide-sm" href="#formacion">Formación</a>
-      <a class="hide-sm" href="#contacto">Contacto</a>
-      <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
-    </nav>
-  </header>
+<div class="wall" aria-hidden="true"><img src="/img/fondo.jpg" alt="" onload="this.classList.add('ok')" onerror="this.remove()"></div>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1><span>Miguel Ángel</span><span>García</span><span class="thin">Durán</span></h1>
-        <p class="lead">Ventas, desarrollo de negocio y gestión de cuentas. Abro conversaciones, las convierto en acuerdos y cuido a los clientes después de firmar.</p>
-        <div class="actions">
-          <a class="btn primary" href="#contacto">Hablemos</a>
-          <a class="btn" href="/cv-miguel-angel-garcia-duran.pdf" download>Descargar CV</a>
-        </div>
-      </div>
-      <div class="portrait">
-        <img src="/img/retrato.jpg" alt="Miguel Ángel García Durán" onerror="this.remove()">
-        <em class="todo">falta: img/retrato.jpg</em>
-      </div>
-    </section>
-  </main>
-</div>
-
-<div class="facts">
-  <div class="wrap">
-    <ul>
-      <li><strong>125 %</strong><span>media de objetivo mensual en Grupo Planeta</span></li>
-      <li><strong>130+</strong><span>leads internacionales gestionados al mes</span></li>
-      <li><strong>25–40 K€</strong><span>valor medio de las operaciones B2B en Novofabric</span></li>
-    </ul>
+<header class="menubar">
+  <div class="left">
+    <span class="dot" aria-hidden="true"></span>
+    <b>Miguel Á. G. D.</b>
+    <button data-open="w-trayectoria">Trayectoria</button>
+    <button data-open="w-logros">Logros</button>
+    <button data-open="w-formacion">Formación</button>
+    <button data-open="w-contacto">Contacto</button>
   </div>
+  <div class="right">
+    <span>MAD · 40.42°N</span>
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x=".7" y=".7" width="21.6" height="10.6" rx="3.3" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/><rect x="2.5" y="2.5" width="16" height="7" rx="2" fill="currentColor"/></svg>
+    <nav class="lang" aria-label="Idioma"><span>ES</span><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+    <span class="clock-long"></span>
+  </div>
+</header>
+
+<div class="istatus" aria-hidden="true">
+  <span class="clock-short"></span>
+  <span class="ic">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 4.2a9.5 9.5 0 0 1 13 0M4 7a6 6 0 0 1 8 0"/><circle cx="8" cy="10" r="1" fill="currentColor"/></svg>
+    <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x=".7" y=".7" width="21.6" height="10.6" rx="3.3" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/><rect x="2.5" y="2.5" width="16" height="7" rx="2" fill="currentColor"/></svg>
+  </span>
 </div>
 
-<div class="wrap">
-  <section class="block" id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <div class="prose">
-      <p>Llevo vendiendo desde 2018: empecé en tienda, cofundé una plataforma B2B internacional de tejidos y hoy vendo formación de posgrado a profesionales de todo el mundo en Grupo Planeta.</p>
-      <p>Estudié Derecho en la Universidad Rey Juan Carlos, hice el Máster en Marketing y Dirección Comercial de EAE Business School y el Programa de Posgrado en Modelos de Negocio Digitales de IE Business School.</p>
-      <p>Me interesan los puestos de desarrollo de negocio, gestión de cuentas y venta B2B, en Madrid o en remoto.</p>
-    </div>
-  </section>
+<main class="desk" id="desk">
+  <div class="group-title" style="left:24px;top:28px;width:340px"><span>Trayectoria</span><span style="font-weight:500;text-transform:none;letter-spacing:0">2018 → hoy</span></div>
+  <div class="group-title" style="right:24px;top:28px;width:300px"><span>Carpetas</span></div>
 
-  <section class="block" id="logros">
-    <h2>Logros</h2>
-    <ul class="wins">
-      <li><strong>Récord</strong><p>Mejor primer mes de ventas de la historia del equipo internacional de Grupo Planeta.</p></li>
-      <li><strong>3×</strong><p>Tripliqué el objetivo de ventas en agosto de 2026 y recibí el Outstanding Performance Award.</p></li>
-      <li><strong>Alianza</strong><p>Inicié y cerré por mi cuenta un acuerdo de colaboración B2B entre AR Hotels &amp; Resorts y Grupo Planeta.</p></li>
-    </ul>
-  </section>
+  <button class="item" data-open="w-gp" style="left:24px;top:66px"><span class="tile t-white"><img src="/img/logo-grupo-planeta.png" alt="" onerror="this.remove()">GP</span><span class="lbl">Grupo Planeta</span></button>
+  <button class="item" data-open="w-nf" style="left:140px;top:66px"><span class="tile t-ink"><img src="/img/logo-novofabric.png" alt="" onerror="this.remove()">NF</span><span class="lbl">Novofabric</span></button>
+  <button class="item" data-open="w-cb" style="left:256px;top:66px"><span class="tile t-coral"><img src="/img/logo-cookbook.png" alt="" onerror="this.remove()">CB</span><span class="lbl">The Cookbook Hotel</span></button>
+  <button class="item" data-open="w-lm" style="left:70px;top:186px"><span class="tile t-green"><img src="/img/logo-leroy-merlin.png" alt="" onerror="this.remove()">LM</span><span class="lbl">Leroy Merlin</span></button>
+  <button class="item" data-open="w-wx" style="left:200px;top:186px"><span class="tile t-amber"><img src="/img/logo-worx.png" alt="" onerror="this.remove()">WX</span><span class="lbl">Worx Tools</span></button>
 
-  <section class="block" id="trayectoria">
-    <h2>Trayectoria</h2>
-    <ol class="thread">
-      <li class="now">
-        <div class="when">2025 – hoy</div>
-        <h3>International Sales Consultant</h3>
-        <p class="org">Grupo Planeta · Ostelea</p>
-        <p>Gestiono una cartera de más de 130 leads internacionales al mes y llevo el ciclo de venta completo, desde el primer contacto y el análisis de necesidades hasta la negociación y la matrícula. Media del 125 % del objetivo mensual.</p>
-      </li>
-      <li>
-        <div class="when">2023 – 2025</div>
-        <h3>Cofundador y Director de Desarrollo de Negocio</h3>
-        <p class="org">Novofabric</p>
-        <p>Abrí oportunidades B2B en mercados internacionales, entre ellos Turquía. Llevé el ciclo completo, de la prospección y cualificación a la negociación y el cierre, con operaciones de 25.000 a 40.000 € de media.</p>
-      </li>
-      <li class="past">
-        <div class="when">2023</div>
-        <h3>Customer Experience &amp; Communication</h3>
-        <p class="org">The Cookbook Gastro Boutique Hotel &amp; Spa</p>
-        <p>Atención personalizada y comunicación con clientes en un entorno internacional de hostelería de lujo.</p>
-      </li>
-      <li class="past">
-        <div class="when">2021 – 2023</div>
-        <h3>Asesor de Ventas y Activación de Marca</h3>
-        <p class="org">Leroy Merlin</p>
-        <p>Asesoramiento a clientes y trabajo por objetivos comerciales y KPI.</p>
-      </li>
-      <li class="past">
-        <div class="when">2018 – 2021</div>
-        <h3>Asesor de Ventas y Activación de Marca</h3>
-        <p class="org">Worx Tools</p>
-        <p>Mis inicios en ventas: relación con clientes, acciones promocionales y posicionamiento de producto.</p>
-      </li>
-    </ol>
-  </section>
+  <button class="item" data-open="w-formacion" style="right:212px;top:62px"><span class="folder-wrap"><span class="folder"></span></span><span class="lbl">Formación</span></button>
+  <button class="item" data-open="w-logros" style="right:28px;top:62px"><span class="folder-wrap"><span class="folder"></span></span><span class="lbl">Logros</span></button>
+  <button class="item" data-open="w-fotos" style="right:120px;top:172px"><span class="folder-wrap"><span class="folder"></span></span><span class="lbl">Fotos y diplomas</span></button>
+  <a class="item" href="/cv-miguel-angel-garcia-duran.pdf" download style="right:32px;top:282px" aria-label="Descargar CV en PDF"><span class="doc-wrap"><span class="doc">PDF<i></i><i></i><i></i></span></span><span class="lbl">CV.pdf</span></a>
+  <a class="item" href="/cv/" style="right:160px;top:292px" aria-label="Ver el CV completo como página"><span class="doc-wrap"><span class="doc">WEB<i></i><i></i><i></i></span></span><span class="lbl">CV completo</span></a>
 
-  <section class="block" id="formacion">
-    <h2>Formación</h2>
-    <div class="pairs">
-      <div>
-        <h3>Programa de Posgrado en Modelos de Negocio Digitales</h3>
-        <p>IE Business School · 2026</p>
-      </div>
-      <div>
-        <h3>Máster en Marketing y Dirección Comercial</h3>
-        <p>EAE Business School · 2025 – 2026</p>
-      </div>
-      <div>
-        <h3>Grado en Derecho</h3>
-        <p>Universidad Rey Juan Carlos · 2020 – 2023</p>
-      </div>
-      <div>
-        <h3>Idiomas</h3>
-        <p>Español nativo, inglés profesional completo, francés básico</p>
-      </div>
-    </div>
-  </section>
+  <button class="item" data-open="w-sobre" style="left:calc(50% - 150px);top:calc(100% - 250px)"><span class="doc-wrap"><span class="doc">TXT<i></i><i></i><i></i></span></span><span class="lbl">Sobre mí.txt</span></button>
+  <button class="item" data-open="w-contacto" style="left:calc(50% + 50px);top:calc(100% - 262px)"><span class="doc-wrap"><span class="doc">@<i></i><i></i><i></i></span></span><span class="lbl">Contacto.vcf</span></button>
+  <a class="item" href="https://www.linkedin.com/in/miguelangel199" target="_blank" rel="noopener" style="left:24px;top:306px" aria-label="LinkedIn (se abre en otra pestaña)"><span class="tile t-blue"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18"/></svg></span><span class="lbl">LinkedIn</span></a>
 
-  <section class="block" id="fotos">
-    <h2>En imágenes</h2>
-    <div class="gallery">
-      <figure>
-        <div class="frame"><img src="/img/ie.jpg" alt="Miguel Ángel en el programa de IE Business School" loading="lazy" onerror="this.remove()"><em class="todo">falta: img/ie.jpg</em></div>
-        <figcaption>IE Business School<span>Modelos de Negocio Digitales, 2026</span></figcaption>
-      </figure>
-      <figure>
-        <div class="frame"><img src="/img/eae.jpg" alt="Miguel Ángel en el máster de EAE Business School" loading="lazy" onerror="this.remove()"><em class="todo">falta: img/eae.jpg</em></div>
-        <figcaption>EAE Business School<span>Máster en Marketing y Dirección Comercial</span></figcaption>
-      </figure>
-      <figure>
-        <div class="frame"><img src="/img/urjc.jpg" alt="Miguel Ángel en la Universidad Rey Juan Carlos" loading="lazy" onerror="this.remove()"><em class="todo">falta: img/urjc.jpg</em></div>
-        <figcaption>Universidad Rey Juan Carlos<span>Grado en Derecho</span></figcaption>
-      </figure>
-      <figure>
-        <div class="frame"><img src="/img/inicios.jpg" alt="Miguel Ángel en sus primeros trabajos en ventas" loading="lazy" onerror="this.remove()"><em class="todo">falta: img/inicios.jpg</em></div>
-        <figcaption>Mis inicios<span>Primeros años en ventas</span></figcaption>
-      </figure>
-    </div>
-  </section>
-</div>
+  <div class="signature">
+    <h1>Miguel Ángel García Durán</h1>
+    <p>Ventas · Desarrollo de negocio · Gestión de cuentas</p>
+    <small>clic para abrir · arrastra para mover</small>
+  </div>
+</main>
 
-<section class="contact" id="contacto">
-  <div class="wrap">
-    <h2>¿Hablamos?</h2>
-    <p>Si buscas a alguien para abrir mercado, llevar cuentas o vender B2B, escríbeme y te respondo en menos de 24 horas.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:miangel99rm@gmail.com">miangel99rm@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/miguelangel199" rel="noopener" target="_blank">LinkedIn</a>
+<nav class="dock" aria-label="Contacto y accesos">
+  <a class="dk" href="https://wa.me/34629376064?text=Hola%20Miguel%20%C3%81ngel%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="ico t-green"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.6 7.2L4 20l1.3-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 10h6M9 13.5h4"/></svg></span><span class="tip">WhatsApp</span></a>
+  <a class="dk" href="tel:+34629376064" aria-label="Llamar"><span class="ico t-green"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><span class="tip">Llamar</span></a>
+  <a class="dk" href="mailto:miangel99rm@gmail.com" aria-label="Email"><span class="ico t-white"><svg viewBox="0 0 24 24" fill="none" stroke="#1D1D1F" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a2.5 2.5 0 0 0 5 0v-1a9 9 0 1 0-3.5 7.1"/></svg></span><span class="tip">Email</span></a>
+  <span class="sep opt" aria-hidden="true"></span>
+  <a class="dk opt" href="https://www.linkedin.com/in/miguelangel199" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="ico t-blue"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18"/></svg></span><span class="tip">LinkedIn</span></a>
+  <a class="dk opt" href="/cv-miguel-angel-garcia-duran.pdf" download aria-label="Descargar CV"><span class="ico t-coral"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9 14l3 3 3-3"/></svg></span><span class="tip">Descargar CV</span></a>
+  <button class="dk" data-open="w-fotos" aria-label="Fotos"><span class="ico t-white"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.5" stroke="#E08A00"/><path d="M3 18l5-5 4 4 3-3 6 6" stroke="#2443C9"/><rect x="2.5" y="3" width="19" height="18" rx="3" stroke="#3B4256"/></svg></span><span class="tip">Fotos</span></button>
+</nav>
+
+<section class="win" id="w-sobre" role="dialog" aria-labelledby="h-sobre">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-sobre">Sobre mí.txt</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar"><img src="/img/retrato.jpg" alt="" onerror="this.remove()">MÁ</span><div><h2>Miguel Ángel García Durán</h2><small>Ventas y desarrollo de negocio · Madrid</small></div></div>
+    <p>Llevo vendiendo desde 2018. Empecé en tienda, cofundé una plataforma B2B internacional de tejidos y hoy vendo formación de posgrado a profesionales de todo el mundo en Grupo Planeta.</p>
+    <p>Lo que más me gusta es vender: entender qué necesita alguien y encontrar un acuerdo que funcione para las dos partes.</p>
+    <div class="kpi"><div><strong>125 %</strong><span>objetivo medio mensual</span></div><div><strong>130+</strong><span>leads internacionales al mes</span></div><div><strong>3×</strong><span>objetivo en agosto 2026</span></div></div>
+    <div class="rows">
+      <div class="row"><span class="y">2026</span><div><b>Posgrado en Modelos de Negocio Digitales</b><span>IE Business School</span></div></div>
+      <div class="row"><span class="y">2025 — 26</span><div><b>Máster en Marketing y Dirección Comercial</b><span>EAE Business School</span></div></div>
+      <div class="row"><span class="y">2020 — 23</span><div><b>Grado en Derecho</b><span>Universidad Rey Juan Carlos</span></div></div>
+      <div class="row"><span class="y">Idiomas</span><div><b>Español nativo, inglés profesional</b><span>Francés básico</span></div></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Miguel Ángel García Durán</span>
-    <span>Madrid, España</span>
+<section class="win" id="w-contacto" role="dialog" aria-labelledby="h-contacto">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-contacto">Contacto.vcf</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar"><img src="/img/retrato.jpg" alt="" onerror="this.remove()">MÁ</span><div><h2>Miguel Ángel García Durán</h2><small>Respondo en menos de 24 horas</small></div></div>
+    <div class="btns">
+      <a class="btn primary" href="https://wa.me/34629376064?text=Hola%20Miguel%20%C3%81ngel%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener">WhatsApp <small>+34 629 376 064</small></a>
+      <a class="btn" href="tel:+34629376064">Llamar <small>+34 629 376 064</small></a>
+      <a class="btn" href="mailto:miangel99rm@gmail.com">Email <small>miangel99rm@gmail.com</small></a>
+      <a class="btn" href="https://www.linkedin.com/in/miguelangel199" target="_blank" rel="noopener">LinkedIn <small>/in/miguelangel199</small></a>
+      <a class="btn" href="/cv-miguel-angel-garcia-duran.pdf" download>Descargar CV <small>PDF</small></a>
+    </div>
   </div>
-</footer>
+</section>
 
+<section class="win" id="w-gp" role="dialog" aria-labelledby="h-gp">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-gp">Grupo Planeta</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar" style="background:#fff;color:#1D1D1F;box-shadow:0 0 0 1px var(--line)">GP</span><div><h2>International Sales Consultant</h2><small>Grupo Planeta · Ostelea · 2025 — hoy</small></div></div>
+    <p>Gestiono una cartera de más de 130 leads internacionales al mes y llevo el ciclo de venta completo: primer contacto, análisis de necesidades, negociación y matrícula.</p>
+    <div class="kpi"><div><strong>125 %</strong><span>media del objetivo mensual</span></div><div><strong>3×</strong><span>objetivo en agosto · Outstanding Performance Award</span></div><div><strong>Récord</strong><span>mejor primer mes del equipo internacional</span></div></div>
+    <p style="margin-top:12px">Además, inicié y cerré por mi cuenta una alianza B2B entre AR Hotels &amp; Resorts y Grupo Planeta.</p>
+  </div>
+</section>
+
+<section class="win" id="w-nf" role="dialog" aria-labelledby="h-nf">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-nf">Novofabric</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar" style="background:#1D1D1F">NF</span><div><h2>Cofundador y Director de Desarrollo de Negocio</h2><small>Novofabric · 2023 — 2025</small></div></div>
+    <p>Plataforma B2B internacional de tejidos. Identifiqué y desarrollé oportunidades en mercados internacionales, entre ellos Turquía, y llevé el ciclo completo de venta B2B, de la prospección y cualificación a la negociación y el cierre.</p>
+    <div class="kpi"><div><strong>25–40 K€</strong><span>valor medio por operación</span></div><div><strong>B2B</strong><span>mercados internacionales</span></div></div>
+  </div>
+</section>
+
+<section class="win" id="w-cb" role="dialog" aria-labelledby="h-cb">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-cb">The Cookbook Hotel</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar" style="background:#E2523A">CB</span><div><h2>Customer Experience &amp; Communication</h2><small>The Cookbook Gastro Boutique Hotel &amp; Spa · 2023</small></div></div>
+    <p>Atención personalizada y resolución de incidencias, gestión de consultas y comunicación con clientes en un entorno internacional de hostelería de lujo.</p>
+  </div>
+</section>
+
+<section class="win" id="w-lm" role="dialog" aria-labelledby="h-lm">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-lm">Leroy Merlin</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar" style="background:#1F8F5A">LM</span><div><h2>Asesor de Ventas y Activación de Marca</h2><small>Leroy Merlin · 2021 — 2023</small></div></div>
+    <p>Asesoramiento a clientes según sus necesidades para impulsar las ventas, trabajando por objetivos comerciales y KPI.</p>
+  </div>
+</section>
+
+<section class="win" id="w-wx" role="dialog" aria-labelledby="h-wx">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-wx">Worx Tools</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="who"><span class="avatar" style="background:#E08A00">WX</span><div><h2>Asesor de Ventas y Activación de Marca</h2><small>Worx Tools · 2018 — 2021</small></div></div>
+    <p>Mis inicios en ventas: relación con clientes, posicionamiento de producto y apoyo en acciones de marketing y promoción.</p>
+  </div>
+</section>
+
+<section class="win" id="w-trayectoria" role="dialog" aria-labelledby="h-tray">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-tray">Trayectoria</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="rows" style="margin-top:0;border-top:0">
+      <button class="row" data-open="w-gp"><span class="y">2025 → hoy</span><div><b>International Sales Consultant</b><span>Grupo Planeta · Ostelea</span></div></button>
+      <button class="row" data-open="w-nf"><span class="y">2023 — 25</span><div><b>Cofundador y Director de Desarrollo de Negocio</b><span>Novofabric</span></div></button>
+      <button class="row" data-open="w-cb"><span class="y">2023</span><div><b>Customer Experience &amp; Communication</b><span>The Cookbook Gastro Boutique Hotel &amp; Spa</span></div></button>
+      <button class="row" data-open="w-lm"><span class="y">2021 — 23</span><div><b>Asesor de Ventas y Activación de Marca</b><span>Leroy Merlin</span></div></button>
+      <button class="row" data-open="w-wx"><span class="y">2018 — 21</span><div><b>Asesor de Ventas y Activación de Marca</b><span>Worx Tools</span></div></button>
+    </div>
+  </div>
+</section>
+
+<section class="win" id="w-logros" role="dialog" aria-labelledby="h-logros">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-logros">Logros</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="rows wins-list" style="margin-top:0;border-top:0">
+      <div class="row"><span class="y">3×</span><div><b>Objetivo triplicado en agosto de 2026</b><span>Outstanding Performance Award · Grupo Planeta</span></div></div>
+      <div class="row"><span class="y">Récord</span><div><b>Mejor primer mes de ventas</b><span>Equipo internacional de Grupo Planeta</span></div></div>
+      <div class="row"><span class="y">Alianza</span><div><b>Acuerdo B2B AR Hotels &amp; Resorts – Grupo Planeta</b><span>Iniciado y cerrado por mi cuenta</span></div></div>
+      <div class="row"><span class="y">125 %</span><div><b>Cumplimiento medio del objetivo mensual</b><span>Con más de 130 leads internacionales al mes</span></div></div>
+      <div class="row"><span class="y">25–40 K€</span><div><b>Valor medio de operaciones B2B</b><span>Novofabric</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="win" id="w-formacion" role="dialog" aria-labelledby="h-form">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-form">Formación</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="rows" style="margin-top:0;border-top:0">
+      <div class="row"><span class="y">2026</span><div><b>Programa de Posgrado en Modelos de Negocio Digitales</b><span>IE Business School · Madrid</span></div></div>
+      <div class="row"><span class="y">2025 — 26</span><div><b>Máster en Marketing y Dirección Comercial</b><span>EAE Business School · Madrid</span></div></div>
+      <div class="row"><span class="y">2020 — 23</span><div><b>Grado en Derecho</b><span>Universidad Rey Juan Carlos · Madrid</span></div></div>
+    </div>
+    <div class="btns"><button class="btn" data-open="w-fotos">Ver diplomas y fotos <small>›</small></button></div>
+  </div>
+</section>
+
+<section class="win" id="w-fotos" role="dialog" aria-labelledby="h-fotos" style="width:min(620px,calc(100vw - 32px))">
+  <div class="titlebar"><div class="lights"><button class="x" data-close aria-label="Cerrar"></button><span class="m"></span><span class="z"></span></div><span class="tt" id="h-fotos">Fotos y diplomas</span><button class="back" data-close>‹ Inicio</button></div>
+  <div class="wbody">
+    <div class="photos">
+      <h3>Diplomas</h3>
+      <button class="ph" data-cap="Diploma · Grado en Derecho, Universidad Rey Juan Carlos"><img src="/img/diploma-derecho.jpg" alt="" loading="lazy"><em>falta foto</em><span>Grado en Derecho · URJC</span></button>
+      <button class="ph" data-cap="Diploma · Máster en Marketing y Dirección Comercial, EAE"><img src="/img/diploma-eae.jpg" alt="" loading="lazy"><em>falta foto</em><span>Máster · EAE</span></button>
+      <button class="ph" data-cap="Diploma · Posgrado en Modelos de Negocio Digitales, IE"><img src="/img/diploma-ie.jpg" alt="" loading="lazy"><em>falta foto</em><span>Posgrado · IE</span></button>
+      <h3>Momentos</h3>
+      <button class="ph" data-cap="IE Business School, 2026"><img src="/img/ie.jpg" alt="" loading="lazy"><em>falta foto</em><span>IE Business School</span></button>
+      <button class="ph" data-cap="EAE Business School"><img src="/img/eae.jpg" alt="" loading="lazy"><em>falta foto</em><span>EAE Business School</span></button>
+      <button class="ph" data-cap="Universidad Rey Juan Carlos"><img src="/img/urjc.jpg" alt="" loading="lazy"><em>falta foto</em><span>URJC</span></button>
+      <button class="ph" data-cap="Mis inicios en ventas"><img src="/img/inicios.jpg" alt="" loading="lazy"><em>falta foto</em><span>Mis inicios</span></button>
+    </div>
+  </div>
+</section>
+
+<div class="viewer" id="viewer" role="dialog" aria-label="Foto"><button id="vClose" aria-label="Cerrar">×</button><img id="vImg" alt=""><p id="vCap"></p></div>
+
+<script>
+(() => {
+  const mobile = matchMedia('(max-width: 760px)');
+
+  const tick = () => {
+    const d = new Date(), tz = {timeZone:'Europe/Madrid'};
+    const t = d.toLocaleTimeString('es-ES', {...tz, hour:'2-digit', minute:'2-digit'});
+    let day = d.toLocaleDateString('es-ES', {...tz, weekday:'short', day:'numeric', month:'short'}).replace(/\./g,'').replace(',', '');
+    day = day.charAt(0).toUpperCase() + day.slice(1);
+    document.querySelector('.clock-long').textContent = `${day}  ${t}`;
+    document.querySelector('.clock-short').textContent = t;
+  };
+  tick(); setInterval(tick, 15000);
+
+  let z = 30, cascade = 0, lastOpener = null;
+  const place = w => {
+    if (mobile.matches || w.dataset.placed) return;
+    const r = w.getBoundingClientRect();
+    w.style.left = Math.max(16, (innerWidth - r.width) / 2 + cascade) + 'px';
+    w.style.top = Math.max(46, 70 + cascade) + 'px';
+    w.dataset.placed = 1; cascade = (cascade + 28) % 140;
+  };
+  const open = (id, from) => {
+    const w = document.getElementById(id); if (!w) return;
+    if (mobile.matches) document.querySelectorAll('.win.open').forEach(o => o !== w && o.classList.remove('open'));
+    w.classList.add('open'); w.style.zIndex = ++z; place(w);
+    document.body.classList.add('has-win');
+    if (from) lastOpener = from;
+    w.querySelector(mobile.matches ? '.back' : '.x')?.focus({preventScroll:true});
+  };
+  const close = w => { w.classList.remove('open'); if (!document.querySelector('.win.open')) document.body.classList.remove('has-win'); lastOpener?.focus({preventScroll:true}); };
+  document.addEventListener('click', e => {
+    const o = e.target.closest('[data-open]');
+    if (o) { e.preventDefault(); open(o.dataset.open, o); }
+    const c = e.target.closest('[data-close]');
+    if (c) close(c.closest('.win'));
+  });
+  document.querySelectorAll('.win').forEach(w => w.addEventListener('pointerdown', () => w.style.zIndex = ++z));
+
+  document.querySelectorAll('.titlebar').forEach(bar => {
+    bar.addEventListener('pointerdown', e => {
+      if (mobile.matches || e.target.closest('button')) return;
+      const w = bar.closest('.win'), r = w.getBoundingClientRect(), dx = e.clientX - r.left, dy = e.clientY - r.top;
+      bar.setPointerCapture(e.pointerId);
+      const mv = ev => {
+        w.style.left = Math.min(innerWidth - 80, Math.max(80 - r.width, ev.clientX - dx)) + 'px';
+        w.style.top = Math.min(innerHeight - 50, Math.max(30, ev.clientY - dy)) + 'px';
+      };
+      const up = () => { bar.removeEventListener('pointermove', mv); bar.removeEventListener('pointerup', up); };
+      bar.addEventListener('pointermove', mv); bar.addEventListener('pointerup', up);
+    });
+  });
+
+  // Iconos: clic abre, arrastrar mueve
+  document.querySelectorAll('.item').forEach(it => {
+    it.addEventListener('pointerdown', e => {
+      if (mobile.matches || e.button !== 0) return;
+      document.querySelectorAll('.item.sel').forEach(s => s.classList.remove('sel')); it.classList.add('sel');
+      const desk = document.getElementById('desk').getBoundingClientRect(), r = it.getBoundingClientRect();
+      const sx = e.clientX, sy = e.clientY, ox = r.left - desk.left, oy = r.top - desk.top; let moved = false;
+      const mv = ev => {
+        const dx = ev.clientX - sx, dy = ev.clientY - sy;
+        if (!moved && Math.hypot(dx, dy) < 5) return;
+        if (!moved) { moved = true; it.setPointerCapture(e.pointerId); it.classList.add('dragging'); it.style.right = 'auto'; }
+        it.style.left = (ox + dx) + 'px'; it.style.top = (oy + dy) + 'px';
+      };
+      const up = () => {
+        it.removeEventListener('pointermove', mv); it.removeEventListener('pointerup', up);
+        it.classList.remove('dragging');
+        if (moved) it.addEventListener('click', ev => { ev.preventDefault(); ev.stopImmediatePropagation(); }, {once:true, capture:true});
+      };
+      it.addEventListener('pointermove', mv); it.addEventListener('pointerup', up);
+    });
+  });
+  document.getElementById('desk').addEventListener('pointerdown', e => {
+    if (!e.target.closest('.item')) document.querySelectorAll('.item.sel').forEach(s => s.classList.remove('sel'));
+  });
+
+  const viewer = document.getElementById('viewer');
+  document.querySelectorAll('.ph').forEach(ph => {
+    const img = ph.querySelector('img');
+    const ok = () => ph.classList.add('has');
+    if (img.complete && img.naturalWidth) ok();
+    img.addEventListener('load', ok); img.addEventListener('error', () => img.remove());
+    ph.addEventListener('click', () => {
+      if (!ph.classList.contains('has')) return;
+      document.getElementById('vImg').src = img.src; document.getElementById('vImg').alt = ph.dataset.cap;
+      document.getElementById('vCap').textContent = ph.dataset.cap;
+      viewer.classList.add('open'); document.getElementById('vClose').focus();
+    });
+  });
+  document.getElementById('vClose').addEventListener('click', () => viewer.classList.remove('open'));
+  viewer.addEventListener('click', e => { if (e.target === viewer) viewer.classList.remove('open'); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (viewer.classList.contains('open')) return viewer.classList.remove('open');
+    const top = [...document.querySelectorAll('.win.open')].sort((a, b) => b.style.zIndex - a.style.zIndex)[0];
+    if (top) close(top);
+  });
+
+  if (!mobile.matches) setTimeout(() => open('w-sobre'), 500);
+})();
+</script>
 </body>
 </html>
